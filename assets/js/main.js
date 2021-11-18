@@ -1,3 +1,33 @@
+////////////////////////////////////////////////////////////////////////////
+//                                  _ooOoo_                               //
+//                                 o8888888o                              //
+//                                 88" . "88                              //
+//                                 (| ^_^ |)                              //
+//                                 O\  =  /O                              //
+//                              ____/`---'\____                           //
+//                            .'  \\|     |//  `.                         //
+//                           /  \\|||  :  |||//  \                        //
+//                          /  _||||| -:- |||||-  \                       //
+//                          |   | \\\  -  /// |   |                       //
+//                          | \_|  ''\---/''  |   |                       //
+//                          \  .-\__  `-`  ___/-. /                       //
+//                        ___`. .'  /--.--\  `. . ___                     //
+//                      ."" '< `.___\_<|>_/___.'  >'"".                   //
+//                    | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//                    \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//             ========`-.____`-.___\_____/___.-`____.-'========          //
+//                                  `=---='                               //
+//              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+// Buddha's blessings will never be shut down and there will never be BUG //
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -49,8 +79,11 @@ function scrollHeader(){
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
     if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+
+    
 }
 window.addEventListener('scroll', scrollHeader)
+
 
 /*=============== NEW SWIPER ===============*/
 let newSwiper = new Swiper(".new-swiper", {
@@ -118,3 +151,76 @@ sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
 sr.reveal(`.category__data, .location__content, .footer__content`,{interval: 100})
 sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
 sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================== SHOW MENU ====================*/
+// const showMenu = (toggleId, navId) =>{
+//     const toggle = document.getElementById(toggleId),
+//     nav = document.getElementById(navId)
+
+//     // Validate that variables exist
+//     if(toggle && nav){
+//         toggle.addEventListener('click', () =>{
+//             // We add the show-menu class to the div tag with the nav__menu class
+//             nav.classList.toggle('show-menu')
+//         })
+//     }
+// }
+
+// showMenu('nav-toggle','nav-menu')
+
+/*==================== SWIPER JS ====================*/
+let galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 0,
+    slidesPerView: 0,
+})
+
+let galleryTop = new Swiper('.gallery-top', {
+    effect: 'fade',
+    loop: true,
+
+    thumbs: {
+      swiper: galleryThumbs
+    }
+})
+
+
+/*==================== POPUP ====================*/
+const btnOpenVideo = document.querySelectorAll('.banner__video-content')
+const bannerPopup = document.getElementById('popup')
+
+function poPup(){
+    bannerPopup.classList.add('show-popup')
+}
+btnOpenVideo.forEach(b => b.addEventListener('click', poPup))
+
+const btnCloseVideo = document.getElementById('popup-close')
+
+btnCloseVideo.addEventListener('click', ()=> {
+    bannerPopup.classList.remove('show-popup')
+})
+
+/*==================== GSAP ANIMATION ====================*/
+const controlImg = document.querySelectorAll('.controls__img')
+
+function scrollAnimation(){
+    gsap.from('.banner__subtitle', {opacity: 0, duration: .2, delay: .2, y: -20})
+    gsap.from('.banner__title', {opacity: 0, duration: .3, delay: .3, y: -20})
+    gsap.from('.banner__description', {opacity: 0, duration: .4, delay: .4, y: -20})
+    gsap.from('.banner__button', {opacity: 0, duration: .5, delay: .5, y: -20})
+    gsap.from('.banner__video-content', {opacity: 0, duration: .6, delay: .6, y: -20})
+
+    bannerPopup.classList.remove('show-popup')
+}
+
+controlImg.forEach(c => c.addEventListener('click', scrollAnimation))
