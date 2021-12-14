@@ -224,3 +224,35 @@ function scrollAnimation(){
 }
 
 controlImg.forEach(c => c.addEventListener('click', scrollAnimation))
+/*==================== LOGIN ====================*/
+const butLoginUser = document.querySelector('.js-button-login')
+const modalLogin = document.querySelector('.modal-login')
+const modalContainer = document.querySelector('.modal-container')
+const modalClone = document.querySelector('.modal-clone')
+function showTableLogin(){
+    modalLogin.classList.add('open')
+    modalRegister.classList.remove('open')
+}
+function  cloneTableLogin(){
+    modalLogin.classList.remove('open')
+}
+butLoginUser.addEventListener('click',showTableLogin)
+modalClone.addEventListener('click',cloneTableLogin)
+// modalLogin.addEventListener('click',cloneTableLogin)
+// modalContainer.addEventListener('click',function (event){
+//    event.stopPropagation()
+// })
+/*==================== REGISTER ====================*/
+const newRegister = document.querySelector('.js-register-in-login')
+const modalRegister = document.querySelector('.js-register')
+const  modalCloneRegister = document.querySelector('.js-clone-register')
+function showTableRegister(){
+    modalLogin.classList.remove('open')
+    modalRegister.classList.add('open')
+}
+function cloneTableRegister(){
+    modalRegister.classList.remove('open')
+}
+
+newRegister.addEventListener('click',showTableRegister)
+modalCloneRegister.addEventListener('click',cloneTableRegister)
