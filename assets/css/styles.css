@@ -90,6 +90,10 @@ body{
   background: var(--body-color);
   color: var(--text-color);
 }
+/*================ON-TOP===============*/
+.top-zero{
+  margin-top: -105px;
+}
 
 h1,h2,h3,h4{
   color: var(--title-color);
@@ -125,6 +129,9 @@ button{
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section{
   padding: 4.5rem 0 2rem;
+}
+.animation-div{
+  animation: modalFadeIn ease 1.5s;
 }
 
 .section__title{

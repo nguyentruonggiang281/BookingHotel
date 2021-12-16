@@ -256,3 +256,11 @@ function cloneTableRegister(){
 
 newRegister.addEventListener('click',showTableRegister)
 modalCloneRegister.addEventListener('click',cloneTableRegister)
+/*==================== LIST-HOUSE ====================*/
+const listHouses = document.querySelectorAll('.location__content')
+function showListHouse(){
+    window.location.href="danhsachphong.html";
+}
+for ( const house of listHouses){
+    house.addEventListener('click',showListHouse)
+}

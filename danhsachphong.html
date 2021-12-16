@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/hinh.PNG" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/danhsachphong.css">
+    <title>Booking Hotel Website</title>
+</head>
+<body>
+<!--==================== MODEL-LOGIN ====================-->
+<div class="modal-login">
+    <div class="modal-container">
+        <div class='modal-clone'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login">
+            Đăng nhập
+        </div>
+        <div class="modal-body">
+            <input type="text" class="input-field" placeholder="Tài Khoản" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+            <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
+            <button type="submit" class="submit-btn" >Đăng Nhập</button>
+            <div class="register"> Bạn chưa có tài khoản. <span href="#" class="register-a js-register-in-login">Đăng kí</span></div>
+        </div>
+    </div>
+</div>
+<!--==================== MODEL-REGISTER ====================-->
+<div class="modal-login js-register">
+    <div class="modal-container">
+        <div class='modal-clone js-clone-register'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login header-re">
+            Đăng kí
+        </div>
+        <div class="modal-body body-re">
+            <input type="text" class="input-field" placeholder="Tên đăng nhập" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+            <input type="password" class="input-field" placeholder="Nhập lại mật Khẩu" required>
+            <input type="checkbox" class="check-box"><span class="checkbox-yes-no ">Tôi đồng ý các điều khoản</span>
+            <button type="submit" class="submit-btn" >Đăng Kí</button>
+        </div>
+    </div>
+</div>
+
+<!--==================== HEADER ====================-->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav__logo">
+            <img src="assets/img/hinh.PNG" alt="" class="nav__logo-img">
+            LogoNhom
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="./index.html#home" class="nav__link active-link">Trang chủ</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="./index.html#location" class="nav__link">Những nơi thú vị gần bạn</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="./index.html#new" class="nav__link">Khuyến mãi</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="./index.html#about" class="nav__link">Đánh giá</a>
+                </li>
+
+                <a href="hotro.html" class="button button--ghost" target="_blank"><span>Support</span></a>
+
+                <li class="nav__item">
+                    <a href="./index.html#money" class="nav__link">Kênh đối tác</a>
+                </li>
+
+                <li class="nav__item">
+                    <a class="nav__link login js-button-login">Đăng nhập</a>
+                </li>
+
+            </ul>
+
+            <div class="nav__close" id="nav-close">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <img src="assets/img/hinh.PNG" alt="" class="nav__img">
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+
+    </nav>
+</header>
+
+<main class="main">
+    <section class="" id="">
+        <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">
+                <!--========== banner POPUP ==========-->
+                <div class="banner__popup" id="popup">
+                    <div>
+                        <div class="banner__popup-close" id="popup-close">
+                            <!--                            <i class='bx bx-x'></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== CONTROLS ==========-->
+        <div class="controls gallery-thumbs">
+            <div class="controls__container swiper-wrapper">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--============================== BODY ==============================-->
+    <section class="section body-listHouse top-zero">
+        <section class="section header-listHouse">
+            <h1>Dach mục tìm phòng</h1>
+        </section>
+        <section class="body-listHouse section">
+            <div class="search-listHouse">
+                <form action="" class="newsletter__form">
+                    <input type="text" placeholder="Tên tỉnh, thành phố hoặc khách sạn" class="newsletter__input">
+                    <button class="button button-search-listHouse">
+                        <span>Tìm phòng</span>
+                    </button>
+                </form>
+            </div>
+            <div class="list-listHouse">
+                <!--------------- Item 1 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                    <div class="element-of-house image-listHouse">
+                        <img src="./assets/img/hotel/hotel1.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bx-star" style="color:#ffc412"></i>
+                            <i class="bx bx-star" style="color:#ffc412"></i>
+                            <i class="bx bx-star" style="color:#ffc412"></i>
+                            <i class="bx bx-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.100.000 VND</h3>
+                            Đêm
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <h3>200.000 VND</h3>
+                            Ngày
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 2 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel2.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 3 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel3.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 4 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel4.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 5 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel5.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 6 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel6.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 7 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel7.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 8 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel8.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 9 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel9.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 10 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel10.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 11 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel11.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 12 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel12.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 13 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel13.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 14 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel14.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 15 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel15.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 16 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel16.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 17 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel17.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 18 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel18.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 19 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel19.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--------------- Item 20 --------------->
+                <div class="list-item newsletter__form">
+                    <a href="datPhong.html">
+                        <div class="element-of-house image-listHouse">
+                            <img src="./assets/img/hotel/hotel20.jpg" class="img-edit-listHouse">
+                        </div>
+                        <div class="element-of-house info-listHouse">
+                            <h3 style="color: #26A69A" class="element-infoHouse">Tên khách sạn</h3>
+                            <div class="type-house" class="element-infoHouse">
+                                Khách sạn
+                            </div>
+                            <div class="group-star">
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                                <i class="bx bx-star" style="color:#ffc412"></i>
+                            </div>
+                            <h4><i class="bx bx-map element-infoHouse"></i>Địa chỉ</h4>
+                            <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+                        </div>
+                        <div class="element-of-house info-price">
+                            <div class="price-listHouse">
+                                <h3>100.000 VND</h3>
+                                Đêm
+                            </div>
+                            <div class="price-listHouse delete-top">
+                                <h3>200.000 VND</h3>
+                                Ngày
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+    </section>
+
+
+</main>
+<!--==================== FOOTER ====================-->
+<footer class="footer section">
+    <div class="footer__container container grid">
+        <div class="footer__content">
+            <a href="#" class="footer__logo">
+                <img src="assets/img/hinh.PNG" alt="" class="footer__logo-img">
+                LogoNhom
+            </a>
+
+            <p class="footer__description">Hãy enjoy cái <br> moment này.</p>
+
+            <div class="footer__social">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-instagram-alt' ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-twitter' ></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">About</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">About Us</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Features</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">News</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Our Services</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">Pricing</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Discounts</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Shipping mode</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Our Company</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">Blog</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">About us</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Our mision</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <span class="footer__copy">&#169; tên nhóm. All rigths reserved(xaoloz)</span>
+
+</footer>
+
+<!--=============== SCROLL UP ===============-->
+<a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+</a>
+
+<!--=============== SCROLL REVEAL ===============-->
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+<!--========== GSAP ==========-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
