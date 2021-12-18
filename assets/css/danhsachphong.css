@@ -64,6 +64,9 @@
 .element-infoHouse{
     margin: 12px 12px;
 }
+.info-listHouse h4{
+    font-size: 80%;
+}
 a{
     color: #999999;
 }
