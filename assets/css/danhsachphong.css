@@ -83,6 +83,7 @@ a{
 }
 .info-price .price-listHouse h3{
     color: #f96d01;
+    font-size: 93%;
 }
 @keyframes modalFadeIn {
     from{
