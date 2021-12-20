@@ -1,7 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
  */
- 
+
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap');
 /* font-family: 'Be Vietnam Pro', sans-serif */
 /*=============== VARIABLES CSS ===============*/
@@ -19,7 +19,7 @@
   /*Green gradient*/
   /* --body-color: linear-gradient(90deg, hsl(74, 13%, 57%) 0%,hsl(75, 10%, 47%) 100%); */
   /* --container-color: linear-gradient(136deg, hsl(75, 23%, 69%) 0% ,hsl(75, 17%, 63%) 100%); */
-  
+
   --body-color: #ebeef5;
   --container-color:#f5f5f5;
   /*Red gradient*/
@@ -329,7 +329,7 @@ button{
 
 .banner__description {
   margin-bottom: 1rem;
-} 
+}
 
 .banner__button-icon {
   font-size: 1.5rem;
@@ -492,7 +492,7 @@ button{
 .swiper-pagination{
   position: initial;
   margin-top: var(--mb-1);
-  
+
 }
 
 .swiper-pagination-bullet{
@@ -504,7 +504,7 @@ button{
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
   margin: 0 .5rem;
-} 
+}
 
 .swiper-pagination-bullet-active{
   width: 1.5rem;
@@ -517,7 +517,7 @@ button{
   padding: 16px;
   border-radius: 35px;
    width: 0;
-   height: 0; 
+   height: 0;
 }
 
 .swiper-button-prev{
@@ -534,7 +534,7 @@ button{
   color: var(--title-color);
   font-weight: var(--font-black);
   font-size: var(--h2-font-size);
-  
+
 }
 .new__container .swiper{
 padding-bottom: 30px;
@@ -1025,7 +1025,7 @@ padding-bottom: 30px;
   .newsletter__description{
     padding: 0 3rem;
   }
-  
+
 }
 
 @media screen and (min-width: 767px){
@@ -1272,7 +1272,7 @@ padding-bottom: 30px;
   .banner__description {
     padding-right: 11rem;
   }
-  
+
   .banner__popup-video {
     width: 1000px;
     height: 560px;
@@ -1312,7 +1312,7 @@ padding-bottom: 30px;
   display: none;
   z-index: 99;
 }
-.modal-login.open{
+.modal-login.open,.modal-return-hotel.open,.model-evaluate.open{
   display: flex;
 }
 .modal-container{

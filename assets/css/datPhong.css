@@ -65,6 +65,18 @@
 .element-order{
     float: left;
 }
+.date{
+    width: 15%;
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 6px 6px 20px rgb(122 122 122 / 20%);
+    /*border: solid #26A69A 1px;*/
+}
+.date-sub{
+    line-height: 40px;
+}
 .combobox-order:hover{
     border: solid #26A69A 1px;
 }
@@ -80,7 +92,7 @@
     margin-bottom: 12px;
 }
 .combo-type-order{
-    margin: 30px 20px 0 600px;
+    margin: 30px 20px 0 100px;
 }
 .enter-order h3{
     color: #f96d01;

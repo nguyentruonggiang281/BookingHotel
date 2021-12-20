@@ -62,7 +62,7 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 let homeSwiper = new Swiper(".home-swiper", {
     spaceBetween: 30,
     loop: 'true',
-    
+
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -79,7 +79,7 @@ function scrollHeader(){
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
     if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 
-    
+
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -103,7 +103,7 @@ let newSwiper = new Swiper(".new-swiper", {
     button.onmousemove = function(e){
         const x = e.pageX - button.offsetLeft;
         const y = e.pageY - button.offsetTop;
-     
+
         button.style.setProperty('--x',x+'px');
         button.style.setProperty('--y',y+'px');
       }
@@ -119,7 +119,7 @@ function scrollActive(){
         const sectionHeight = current.offsetHeight,
               sectionTop = current.offsetTop - 58,
               sectionId = current.getAttribute('id')
-    
+
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
         }else{
@@ -129,7 +129,7 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
     // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
@@ -231,6 +231,7 @@ const modalClone = document.querySelector('.modal-clone')
 function showTableLogin(){
     modalLogin.classList.add('open')
     modalRegister.classList.remove('open')
+    modalReturn.classList.remove('open')
 }
 function  cloneTableLogin(){
     modalLogin.classList.remove('open')
@@ -248,9 +249,11 @@ const  modalCloneRegister = document.querySelector('.js-clone-register')
 function showTableRegister(){
     modalLogin.classList.remove('open')
     modalRegister.classList.add('open')
+    modalReturn.classList.remove('open')
 }
 function cloneTableRegister(){
     modalRegister.classList.remove('open')
+
 }
 
 newRegister.addEventListener('click',showTableRegister)
@@ -263,3 +266,88 @@ function showListHouse(){
 for ( const house of listHouses){
     house.addEventListener('click',showListHouse)
 }
+/*==================== CART ====================*/
+const newCart = document.querySelector('.js-button-return')
+const modalReturn = document.querySelector('.modal-return-hotel')
+const modalCloneReturn = document.querySelector('.js-clone-return')
+function showTabelCart(){
+    // alert('hieu')
+    modalReturn.classList.add('open')
+    modalRegister.classList.remove('open')
+    modalLogin.classList.remove('open')
+}
+newCart.addEventListener('click',showTabelCart)
+function cloneReturn(){
+    modalReturn.classList.remove('open')
+}
+modalCloneReturn.addEventListener('click',cloneReturn)
+/*==================== EVALUATE ====================*/
+const newEvas = document.querySelectorAll('.button--evaluate')
+const modelEvaluate = document.querySelector('.model-evaluate')
+const  cloneEvaluate = document.querySelector('.js-clone-evaluate')
+function showEvaluate(){
+    modelEvaluate.classList.add('open')
+}
+function cloneTableEvaluate(){
+    modelEvaluate.classList.remove('open')
+}
+for (const newEva of newEvas){
+    newEva.addEventListener('click',showEvaluate)
+}
+cloneEvaluate.addEventListener('click',cloneTableEvaluate)
+/*==================== MAKE-STAR ====================*/
+const star1 = document.querySelector('.one-star')
+const star2 = document.querySelector('.two-star')
+const star3 = document.querySelector('.three-star')
+const star4 = document.querySelector('.four-star')
+const star5 = document.querySelector('.five-star')
+function makeStar1(){
+    star1.classList.add('bxs-star')
+    star1.classList.remove('bx-star')
+    star2.classList.add('bx-star')
+    star2.classList.remove('bxs-star')
+    star3.classList.add('bx-star')
+    star3.classList.remove('bxs-star')
+    star4.classList.add('bx-star')
+    star4.classList.remove('bxs-star')
+    star5.classList.add('bx-star')
+    star5.classList.remove('bxs-star')
+}
+function makeStar2(){
+    makeStar1()
+    star2.classList.add('bxs-star')
+    star2.classList.remove('bx-star')
+    star3.classList.add('bx-star')
+    star3.classList.remove('bxs-star')
+    star4.classList.add('bx-star')
+    star4.classList.remove('bxs-star')
+    star5.classList.add('bx-star')
+    star5.classList.remove('bxs-star')
+}
+function makeStar3(){
+    makeStar2()
+    star3.classList.add('bxs-star')
+    star3.classList.remove('bx-star')
+    star4.classList.add('bx-star')
+    star4.classList.remove('bxs-star')
+    star5.classList.add('bx-star')
+    star5.classList.remove('bxs-star')
+}
+function makeStar4(){
+    makeStar3()
+    star4.classList.add('bxs-star')
+    star4.classList.remove('bx-star')
+    star5.classList.add('bx-star')
+    star5.classList.remove('bxs-star')
+}
+function makeStar5(){
+    makeStar4()
+    star5.classList.add('bxs-star')
+    star5.classList.remove('bx-star')
+}
+
+star1.addEventListener('click',makeStar1)
+star2.addEventListener('click',makeStar2)
+star3.addEventListener('click',makeStar3)
+star4.addEventListener('click',makeStar4)
+star5.addEventListener('click',makeStar5)
