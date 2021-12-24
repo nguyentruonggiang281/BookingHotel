@@ -66,16 +66,20 @@
     float: left;
 }
 .date{
-    width: 15%;
-    height: 40px;
-    margin-left: 30%;
+    /*width: 15%;*/
+    /*height: 40px;*/
+    margin-left: 15%;
     margin-top: 5%;
-    border-radius: 10px;
-    box-shadow: 6px 6px 20px rgb(122 122 122 / 20%);
     /*border: solid #26A69A 1px;*/
 }
 .date-sub{
+    margin-top: -20px;
     line-height: 40px;
+    margin-left: 12px;
+    display:inline-block;
+    border-radius: 10px;
+    box-shadow: 6px 6px 20px rgb(122 122 122 / 20%);
+    padding: 4px;
 }
 .combobox-order:hover{
     border: solid #26A69A 1px;

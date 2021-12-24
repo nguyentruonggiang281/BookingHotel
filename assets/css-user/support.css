@@ -24,6 +24,26 @@
     width: 80%;
     margin-left: 2%;
 }
+.list-question{
+    position: relative;
+}
+/*.show-answer:hover{*/
+/*    display: block;*/
+/*}*/
+.answer-sup{
+    display: none;
+}
+.answer-sup .show-answer:hover{
+    position: absolute;
+    background: white;
+    width: 70%;
+    min-height: 300px;
+    margin: 12px 0 12px 5%;
+    padding: 8px;
+    z-index: 99;
+    display: none;
+    box-shadow: 6px 6px 20px rgb(122 122 122 / 100%);
+}
 @keyframes modalFadeIn {
     from{
         opacity: 0;

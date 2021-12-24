@@ -345,7 +345,6 @@ function makeStar5(){
     star5.classList.add('bxs-star')
     star5.classList.remove('bx-star')
 }
-
 star1.addEventListener('click',makeStar1)
 star2.addEventListener('click',makeStar2)
 star3.addEventListener('click',makeStar3)
