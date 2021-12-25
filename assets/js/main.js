@@ -226,22 +226,18 @@ controlImg.forEach(c => c.addEventListener('click', scrollAnimation))
 /*==================== LOGIN ====================*/
 const butLoginUser = document.querySelector('.js-button-login')
 const modalLogin = document.querySelector('.modal-login')
-const modalContainer = document.querySelector('.modal-container')
 const modalClone = document.querySelector('.modal-clone')
 function showTableLogin(){
     modalLogin.classList.add('open')
     modalRegister.classList.remove('open')
     modalReturn.classList.remove('open')
+    modalUser.classList.remove('open')
 }
 function  cloneTableLogin(){
     modalLogin.classList.remove('open')
 }
 butLoginUser.addEventListener('click',showTableLogin)
 modalClone.addEventListener('click',cloneTableLogin)
-// modalLogin.addEventListener('click',cloneTableLogin)
-// modalContainer.addEventListener('click',function (event){
-//    event.stopPropagation()
-// })
 /*==================== REGISTER ====================*/
 const newRegister = document.querySelector('.js-register-in-login')
 const modalRegister = document.querySelector('.js-register')
@@ -250,6 +246,7 @@ function showTableRegister(){
     modalLogin.classList.remove('open')
     modalRegister.classList.add('open')
     modalReturn.classList.remove('open')
+    modalUser.classList.remove('open')
 }
 function cloneTableRegister(){
     modalRegister.classList.remove('open')
@@ -258,6 +255,22 @@ function cloneTableRegister(){
 
 newRegister.addEventListener('click',showTableRegister)
 modalCloneRegister.addEventListener('click',cloneTableRegister)
+
+/*==================== USER ====================*/
+const butUser = document.querySelector('.js-button-user')
+const modalUser = document.querySelector('.js-user')
+const modalCloneUser = document.querySelector('.js-clone-user')
+function showTableUser(){
+    modalUser.classList.add('open')
+    modalRegister.classList.remove('open')
+    modalReturn.classList.remove('open')
+    modalLogin.classList.remove('open')
+}
+function  cloneTableUser(){
+    modalUser.classList.remove('open')
+}
+butUser.addEventListener('click',showTableUser)
+modalCloneUser.addEventListener('click',cloneTableUser)
 /*==================== LIST-HOUSE ====================*/
 const listHouses = document.querySelectorAll('.location__content')
 function showListHouse(){
@@ -275,6 +288,7 @@ function showTabelCart(){
     modalReturn.classList.add('open')
     modalRegister.classList.remove('open')
     modalLogin.classList.remove('open')
+    modalUser.classList.remove('open')
 }
 newCart.addEventListener('click',showTabelCart)
 function cloneReturn(){

@@ -196,6 +196,11 @@ span{
     box-shadow: 6px 6px 20px rgb(122 122 122 / 20%);
     padding: 16px;
 }
+.input-field{
+    border: none;
+    border-bottom: solid 1px #000;
+    outline: none;
+}
 
 .ontop-content{
     background: rgba(0,0,0,0.02);

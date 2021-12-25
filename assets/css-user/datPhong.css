@@ -80,6 +80,7 @@
     border-radius: 10px;
     box-shadow: 6px 6px 20px rgb(122 122 122 / 20%);
     padding: 4px;
+    outline: none;
 }
 .combobox-order:hover{
     border: solid #26A69A 1px;

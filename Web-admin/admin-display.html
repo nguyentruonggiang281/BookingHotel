@@ -15,7 +15,7 @@
 
     <title>Admin</title>
 
-    <script src="../assets/js/main-admin.js"></script>
+<!--    <script src="../assets/js/main-admin.js"></script>-->
 </head>
 <body>
 <main>
@@ -94,6 +94,7 @@
                     </div>
                     <span class="note-info"><i class="bx bx-error"> Kiểm tra và cập nhật</i></span>
                 </div>
+
                 <div class="infomation-content">
                         <div class="icon-content-info inline content-item-4">
                             <i class="bx bx-dollar bx-icon-total"></i>
@@ -107,7 +108,7 @@
             </div>
         </div>
             <!--===========================ORDER==============================-->
-            <div class="order-data">
+            <div class="order-data" id="order">
             <div class="table-order table element-alike">
                 <h2 class="title-table">PHÒNG ĐÃ ĐẶT TRONG HÔM NAY</h2>
                 <table class="table-sub" border="1">
@@ -163,12 +164,14 @@
                     </tr>
                 </table>
             </div>
+                <a href="#" class="js-view-hieu">
             <button class="button button-view-all">
                     <span>Xem toàn bộ</span>
                 </button>
+                </a>
             </div>
             <!--===========================BROWSE==============================-->
-            <div class="browse-data">
+            <div class="browse-data" id="browse">
                 <div class="table-browse table element-alike">
                     <h2 class="title-table">KÊNH ĐỐI TÁC CHỜ DUYỆT</h2>
                     <table class="table-sub" border="1">
@@ -219,7 +222,7 @@
                 </button>
             </div>
             <!--===========================UPDATE==============================-->
-            <div class="update-data">
+            <div class="update-data" id="update">
                 <div class="table-update table element-alike">
                     <h2 class="title-table">CHI TIẾT KHÁCH SẠN ĐANG HOẠT ĐỘNG</h2>
                     <table class="table-sub" border="1">
@@ -279,5 +282,22 @@
         </div>
     </div>
 </main>
+!--=============== SCROLL UP ===============-->
+<a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+</a>
+
+<!--=============== SCROLL REVEAL ===============-->
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+<!--========== GSAP ==========-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="../assets/js/main.js"></script>
 </body>
 </html>
