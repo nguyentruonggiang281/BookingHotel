@@ -96,7 +96,7 @@ body{
 }
 .img-background-header{
   height: 400px;
-  background: url('../../assets/img/background_header.jpg') center center/cover no-repeat;
+  background: url('../img/home/background_header.jpg') center center/cover no-repeat;
 }
 
 h1,h2,h3,h4{

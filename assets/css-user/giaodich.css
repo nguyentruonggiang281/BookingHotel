@@ -88,7 +88,10 @@
     margin-right: 50px;
     margin-top: 16px;
 }
-
+textarea{
+    border: none;
+    outline: none;
+}
 @keyframes modalFadeIn {
     from{
         opacity: 0;
