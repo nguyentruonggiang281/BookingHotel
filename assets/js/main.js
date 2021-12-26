@@ -271,6 +271,8 @@ function  cloneTableUser(){
 }
 butUser.addEventListener('click',showTableUser)
 modalCloneUser.addEventListener('click',cloneTableUser)
+/*==================== SEARCH ====================*/
+const butSearchHome = document.querySelectorAll('.js-input-search-home')
 /*==================== LIST-HOUSE ====================*/
 const listHouses = document.querySelectorAll('.location__content')
 function showListHouse(){
@@ -278,6 +280,9 @@ function showListHouse(){
 }
 for ( const house of listHouses){
     house.addEventListener('click',showListHouse)
+}
+for (const nvh of butSearchHome){
+    nvh.addEventListener('click',showListHouse)
 }
 /*==================== CART ====================*/
 const newCart = document.querySelector('.js-button-return')

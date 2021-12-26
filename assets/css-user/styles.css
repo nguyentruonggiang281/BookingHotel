@@ -170,7 +170,6 @@ button{
 .banner{
   animation: modalFadeIn ease 8.0s;
 }
-
 /*=============== NAV ===============*/
 .nav{
   height: var(--header-height);
@@ -315,6 +314,30 @@ button{
   display: grid;
   grid-template-columns: 2fr .25fr;
   align-content: center;
+}
+.banner__data:hover{
+  cursor: pointer;
+}
+.banner__data{
+  background: rgba(1,1,1,0.3);
+  border-radius: 3rem;
+  width: 400px;
+  box-shadow: 6px 6px 20px rgb(122 122 122 / 80%);
+}
+.input-sub-banner{
+  height: 36px;
+  margin-left: 30px;
+  margin-top: 15px;
+  border-radius: 3rem;
+  width: 300px;
+  padding: 4px;
+}
+.icon_banner__data{
+  float: right;
+  font-size: 40px;
+  line-height: 66px;
+  margin-right: 12px;
+  color: white;
 }
 
 .banner__subtitle, .banner__title, .banner__description {
