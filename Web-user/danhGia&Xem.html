@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="../assets/img/home/hinh.PNG" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../assets/css-user/styles.css">
+    <link rel="stylesheet" href="../assets/css-user/danhsachphong.css">
+    <link rel="stylesheet" href="../assets/css-user/giaodich.css">
+    <title>Booking Hotel Website</title>
+</head>
+<body>
+<!--==================== MODEL-LOGIN ====================-->
+<div class="modal-login">
+    <div class="modal-container">
+        <div class='modal-clone'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login">
+            Đăng nhập
+        </div>
+        <div class="modal-body">
+            <input type="text" class="input-field" placeholder="Tài Khoản" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+            <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
+            <button type="submit" class="submit-btn" >Đăng Nhập</button>
+            <div class="register"> Bạn chưa có tài khoản. <span href="#" class="register-a js-register-in-login">Đăng kí</span></div>
+        </div>
+    </div>
+</div>
+<!--==================== MODEL-REGISTER ====================-->
+<div class="modal-login js-register">
+    <div class="modal-container">
+        <div class='modal-clone js-clone-register'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login header-re">
+            Đăng kí
+        </div>
+        <div class="modal-body body-re">
+            <input type="text" class="input-field" placeholder="Tên đăng nhập" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+            <input type="password" class="input-field" placeholder="Nhập lại mật Khẩu" required>
+            <input type="checkbox" class="check-box"><span class="checkbox-yes-no ">Tôi đồng ý các điều khoản</span>
+            <button type="submit" class="submit-btn" >Đăng Kí</button>
+        </div>
+    </div>
+</div>
+<!--==================== MODEL-USER ====================-->
+<div class="modal-login js-user">
+    <div class="modal-container">
+        <div class='modal-clone js-clone-user'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login header-re">
+            Thông tin người dùng
+        </div>
+        <div class="modal-body body-re">
+            <input type="text" class="input-field" placeholder="Họ và Tên" required>
+            <input type="text" class="input-field" placeholder="Số điện thoại" required>
+            <button type="submit" class="submit-btn but-save-user" >Lưu</button>
+        </div>
+    </div>
+</div>
+<!--==================== MODEL-RETURN-HOTEL ====================-->
+<div class="modal-return-hotel js-return list-listHouse">
+    <div class="return-container">
+        <div class='modal-clone js-clone-return'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-login header-re">
+            <i class="bx bxs-cart"></i>2
+        </div>
+        <div class="modal-return-body">
+    <!--------------- Item 1 --------------->
+    <div class="list-item newsletter__form">
+        <a href="#">
+            <div class="element-of-house image-listHouse">
+                <img src="../assets/img/hotel/hotel1.jpg" class="img-edit-listHouse">
+            </div>
+            <div class="element-of-house info-listHouse">
+                <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Sofitel Plaza SaiGon</h3>
+                <div class="type-house" class="element-infoHouse">
+                    Khách sạn
+                </div>
+                <div class="group-star">
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                </div>
+                <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+            </div>
+            <div class="element-of-house info-price">
+                <div class="price-listHouse">
+                    <h3>1.350.000 VND</h3>
+                </div>
+                <div class="price-listHouse delete-top">
+                    <button class="button button--return">
+                        <span>Trả phòng</span>
+                    </button>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!--------------- Item 2 --------------->
+    <div class="list-item newsletter__form">
+        <a href="#">
+            <div class="element-of-house image-listHouse">
+                <img src="../assets/img/hotel/hotel2.jpg" class="img-edit-listHouse">
+            </div>
+            <div class="element-of-house info-listHouse">
+                <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Silverland Yen</h3>
+                <div class="type-house" class="element-infoHouse">
+                    Khách sạn
+                </div>
+                <div class="group-star">
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                    <i class="bx bxs-star" style="color:#ffc412"></i>
+                </div>
+                <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                <h3 style="color: #26A69A" class="element-infoHouse">Thanh toán khi nhận phòng</h3>
+            </div>
+            <div class="element-of-house info-price">
+                <div class="price-listHouse">
+                    <h3>450.000 VND</h3>
+                </div>
+                <div class="price-listHouse delete-top">
+                    <button class="button button--return">
+                        <span>Trả phòng</span>
+                    </button>
+                </div>
+            </div>
+        </a>
+    </div>
+        </div>
+    </div>
+</div>
+<!--==================== MODEL-EVALUATE ====================-->
+<div class="model-evaluate list-listHouse">
+    <div class="evaluate-container">
+        <div class='modal-clone js-clone-evaluate'>
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="header-evaluate">
+            <div class="number-star">
+                <i class="bx bx-star  one-star"></i>
+                <i class="bx bx-star  two-star"></i>
+                <i class="bx bx-star  three-star"></i>
+                <i class="bx bx-star  four-star"></i>
+                <i class="bx bx-star  five-star"></i>
+            </div>
+        </div>
+        <div class="body-evaluate">
+            <div class="evaluate-camera camera-video camera-sub">
+                <i class="bx bxs-camera-plus"></i>
+                <br>Thêm ảnh
+            </div>
+            <div class="evaluate-video camera-video video-sub">
+                <i class="bx bxs-video-plus"></i>
+                <br>Thêm video
+            </div>
+            <div class="evaluate-my-cmt">
+                <textarea  placeholder="Chia sẽ cảm nhận của bạn về khách sạn này"></textarea>
+            </div>
+        </div>
+        <div class="footer-evaluate">
+            <button class="button button--evaluateOK">
+                <span>Xong</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!--==================== HEADER ====================-->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav__logo">
+            <i class="bx bx-expand-alt">MoodAsia</i>
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html#home" class="nav__link active-link">Trang chủ</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="index.html#location" class="nav__link">Những nơi thú vị gần bạn</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="index.html#new" class="nav__link">Khuyến mãi</a>
+                </li>
+
+                <a href="hotro.html" class="button button--ghost" target="_blank"><span>Support</span></a>
+
+                <li class="nav__item">
+                    <a href="index.html#money" class="nav__link">Kênh đối tác</a>
+                </li>
+
+                <li class="nav__item">
+                    <a class="nav__link login js-button-login">Đăng nhập</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="index.html#about" class="nav__link"><i class="bx bxs-cart"></i></a>
+                </li>
+
+                <li class="nav__item">
+                    <a class="nav__link js-button-user"><i class="bx bxs-user"></i></a>
+                </li>
+
+            </ul>
+
+            <div class="nav__close" id="nav-close">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <img src="../assets/img/home/hinh.PNG" alt="" class="nav__img">
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+
+    </nav>
+</header>
+
+<main class="main">
+    <section class="" id="">
+        <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">
+                <!--========== banner POPUP ==========-->
+                <div class="banner__popup" id="popup">
+                    <div>
+                        <div class="banner__popup-close" id="popup-close">
+                            <!--                            <i class='bx bx-x'></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== CONTROLS ==========-->
+        <div class="controls gallery-thumbs">
+            <div class="controls__container swiper-wrapper">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--============================== BODY ==============================-->
+<section class="section body-listHouse top-zero">
+    <section class="section header-listHouse img-background-header">
+        <h1>Lịch sử giao dịch</h1>
+    </section>
+    <section class="section">
+        <div class="search-listHouse">
+            <form action="" class="newsletter__form header-toolbar">
+                <input type="text" placeholder="Tên tỉnh, thành phố hoặc khách sạn" class="newsletter__input">
+                <button class="button button-search-listHouse">
+                    <span>Tìm phòng</span>
+                </button>
+<!--                <div class="js-button-return">-->
+                <button type="button" class="button js-button-return">
+                    <span><i class="bx bxs-cart "></i>2</span>
+                </button>
+<!--                </div>-->
+            </form>
+        </div>
+        <div class="list-listHouse">
+            <!--------------- Item 1 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel1.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Sofitel Plaza SaiGon</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 07/03/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.350.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--------------- Item 2 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel2.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Silverland Yen</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 27/03/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>654.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--------------- Item 3 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel37.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Fusion Suites</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 27/04/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.085.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--------------- Item 4 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel47.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Renaissance</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 16/05/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.839.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--------------- Item 5 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel57.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Urban House Saigon Golden</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 17/07/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.301.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--------------- Item 6 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel67.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Somerset Chancellor Court</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 18/8/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>1.275.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--------------- Item 7 --------------->
+            <div class="list-item newsletter__form">
+                <a href="#">
+                    <div class="element-of-house image-listHouse">
+                        <img src="../assets/img/hotel/hotel7.jpg" class="img-edit-listHouse">
+                    </div>
+                    <div class="element-of-house info-listHouse">
+                        <h3 style="color: #26A69A" class="element-infoHouse">Khách sạn Ambassador Sài Gòn</h3>
+                        <div class="type-house" class="element-infoHouse">
+                            Khách sạn
+                        </div>
+                        <div class="group-star">
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                            <i class="bx bxs-star" style="color:#ffc412"></i>
+                        </div>
+                        <h4><i class="bx bx-map element-infoHouse"></i>quận 1, thành phố Hồ Chí Minh</h4>
+                        <h3 style="color: #26A69A" class="element-infoHouse">Đã trả phòng vào 19/9/2021</h3>
+                    </div>
+                    <div class="element-of-house info-price">
+                        <div class="price-listHouse">
+                            <h3>547.000 VND</h3>
+                        </div>
+                        <div class="price-listHouse delete-top">
+                            <button class="button button--evaluate">
+                                <span>Đánh giá</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+</main>
+<!--==================== FOOTER ====================-->
+<footer class="footer section">
+    <div class="footer__container container grid">
+        <div class="footer__content">
+            <a href="#" class="footer__logo">
+                <img src="../assets/img/home/hinh.PNG" alt="" class="footer__logo-img">
+                LogoNhom
+            </a>
+
+            <p class="footer__description">Hãy enjoy cái <br> moment này.</p>
+
+            <div class="footer__social">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-instagram-alt' ></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                    <i class='bx bxl-twitter' ></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">About</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">About Us</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Features</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">News</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Our Services</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">Pricing</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Discounts</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Shipping mode</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Our Company</h3>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#" class="footer__link">Blog</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">About us</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__link">Our mision</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <span class="footer__copy">&#169; tên nhóm. All rigths reserved(xaoloz)</span>
+
+</footer>
+
+<!--=============== SCROLL UP ===============-->
+<a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+</a>
+
+<!--=============== SCROLL REVEAL ===============-->
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+<!--========== GSAP ==========-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

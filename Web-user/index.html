@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="../assets/img/home/hinh.PNG" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="../assets/css-user/styles.css">
+
+        <title>Booking Hotel Website</title>
+    </head>
+    <body>
+       <!--==================== MODEL-LOGIN ====================-->
+         <div class="modal-login">
+             <div class="modal-container">
+                 <div class='modal-clone'>
+                     <i class='bx bx-x'></i>
+                 </div>
+                 <div class="header-login">
+                     Đăng nhập
+                 </div>
+                 <div class="modal-body">
+                     <input type="text" class="input-field" placeholder="Tài Khoản" required>
+                     <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+                     <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
+                     <button type="submit" class="submit-btn" >Đăng Nhập</button>
+                     <div class="register"> Bạn chưa có tài khoản. <span href="#" class="register-a js-register-in-login">Đăng kí</span></div>
+                 </div>
+             </div>
+         </div>
+       <!--==================== MODEL-REGISTER ====================-->
+       <div class="modal-login js-register">
+           <div class="modal-container">
+               <div class='modal-clone js-clone-register'>
+                   <i class='bx bx-x'></i>
+               </div>
+               <div class="header-login header-re">
+                   Đăng kí
+               </div>
+               <div class="modal-body body-re">
+                   <input type="text" class="input-field" placeholder="Tên đăng nhập" required>
+                   <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+                   <input type="password" class="input-field" placeholder="Nhập lại mật Khẩu" required>
+                   <input type="checkbox" class="check-box"><span class="checkbox-yes-no ">Tôi đồng ý các điều khoản</span>
+                   <button type="submit" class="submit-btn" >Đăng Kí</button>
+               </div>
+           </div>
+       </div>
+       <!--==================== MODEL-USER ====================-->
+       <div class="modal-login js-user">
+           <div class="modal-container">
+               <div class='modal-clone js-clone-user'>
+                   <i class='bx bx-x'></i>
+               </div>
+               <div class="header-login header-re">
+                   Thông tin người dùng
+               </div>
+               <div class="modal-body body-re">
+                   <input type="text" class="input-field" placeholder="Họ và Tên" required>
+                   <input type="text" class="input-field" placeholder="Số điện thoại" required>
+                   <button type="submit" class="submit-btn but-save-user" >Lưu</button>
+               </div>
+           </div>
+       </div>
+
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="bx bx-expand-alt">MoodAsia</i>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Trang chủ</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#location" class="nav__link">Những nơi thú vị gần bạn</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#new" class="nav__link">Khuyến mãi</a>
+                        </li>
+
+                        <a href="hotro.html" class="button button--ghost" target="_blank"><span>Support</span></a>
+
+                        <li class="nav__item">
+                            <a href="#money" class="nav__link">Kênh đối tác</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link login js-button-login">Đăng nhập</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link"><i class="bx bxs-cart"></i></a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link js-button-user"><i class="bx bxs-user"></i></a>
+                        </li>
+
+
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <img src="../assets/img/home/hinh.PNG" alt="" class="nav__img">
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="" id="">
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                        <!--========== banner 1 ==========-->
+                        <section class="banner swiper-slide">
+                            <img src="../assets/img/home/banner/borabora.jpg" alt="" class="banner__bg">
+
+                            <div class="banner__container bd-container">
+                                <div class="banner__data">
+                                    <input type="text" class="input-sub-banner" placeholder="Tìm kiếm...">
+                                    <i class="bx bx-search-alt icon_banner__data js-input-search-home"></i>
+                                </div>
+
+                                <div class="banner__video">
+                                    <div class="banner__video-content">
+                                        <i class='bx bx-play-circle banner__video-icon'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!--========== banner 2 ==========-->
+                        <section class="banner swiper-slide">
+                            <img src="../assets/img/home/banner/bali.jpg" alt="" class="banner__bg">
+
+                            <div class="banner__container bd-container">
+                                <div class="banner__data">
+                                    <input type="text" class="input-sub-banner" placeholder="Tìm kiếm...">
+                                    <i class="bx bx-search-alt icon_banner__data js-input-search-home"></i>
+                                </div>
+
+                                <div class="banner__video">
+                                    <div class="banner__video-content">
+                                        <i class='bx bx-play-circle banner__video-icon'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!--========== banner 3 ==========-->
+                        <section class="banner swiper-slide">
+                            <img src="../assets/img/home/banner/palawan.jpg" alt="" class="banner__bg">
+
+                            <div class="banner__container bd-container">
+                                <div class="banner__data">
+                                    <input type="text" class="input-sub-banner" placeholder="Tìm kiếm...">
+                                    <i class="bx bx-search-alt icon_banner__data js-input-search-home"></i>
+                                </div>
+
+                                <div class="banner__video">
+                                    <div class="banner__video-content">
+                                        <i class='bx bx-play-circle banner__video-icon'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!--========== banner POPUP ==========-->
+                        <div class="banner__popup" id="popup">
+                            <div>
+                                <div class="banner__popup-close" id="popup-close">
+                                    <i class='bx bx-x'></i>
+                                </div>
+                                <iframe class="banner__popup-video" src="https://www.youtube.com/embed/DIgv-e18OzA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--========== CONTROLS ==========-->
+                <div class="controls gallery-thumbs">
+                    <div class="controls__container swiper-wrapper">
+                        <img src="../assets/img/home/banner/borabora.jpg" alt="" class="controls__img swiper-slide">
+                        <img src="../assets/img/home/banner/bali.jpg" alt="" class="controls__img swiper-slide">
+                        <img src="../assets/img/home/banner/palawan.jpg" alt="" class="controls__img swiper-slide">
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+
+
+            <!--==================== HOME ====================-->
+            <section class="home container" id="home">
+                <div class="swiper home-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- HOME SLIDER 1 -->
+                        <section class="swiper-slide">
+                            <div class="home__content grid">
+                                <div class="home__group">
+                                    <img src="../assets/img/home/slider/title1.jpg" alt="" class="home__img">
+                                    <div class="home__indicator"></div>
+
+                                    <div class="home__details-img">
+                                        <h4 class="home__details-title">Mood Asia</h4>
+                                        <span class="home__details-subtitle">Chúc bạn một ngày vui vẻ.</span>
+                                    </div>
+                                </div>
+
+                                <div class="home__data">
+                                    <h3 class="home__subtitle">#1 Nơi ở thú vị</h3>
+                                    <h1 class="home__title">ĐỘC LẠ <br> HẤP DẪN  <br> LÔI CUỐN!!</h1>
+                                    <p class="home__description">Trải nghiệm và cảm nhận những nới ở vô cùng độc đáo
+                                    </p>
+
+                                    <div class="home__buttons">
+                                        <a href="datPhong.html" class="button"><span>Đặt ngay</span></a>
+                                        <a href="danhsachphong.html" class="button--link button--flex">Xem toàn bộ <i class='bx bx-right-arrow-alt button__icon'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- HOME SLIDER 2 -->
+                        <section class="swiper-slide">
+                            <div class="home__content grid">
+                                <div class="home__group">
+                                    <img src="../assets/img/home/slider/title2.jpg" alt="" class="home__img">
+                                    <div class="home__indicator"></div>
+
+                                    <div class="home__details-img">
+                                        <h4 class="home__details-title">Mood Asia</h4>
+                                        <span class="home__details-subtitle">Chúc bạn một ngày vui vẻ.</span>
+                                    </div>
+                                </div>
+
+                                <div class="home__data">
+                                    <h3 class="home__subtitle">#2 Không gian thoải mái</h3>
+                                    <h1 class="home__title">RỘNG RÃI <br> YÊN TĨNH  <br> VUI CHƠI!!</h1>
+                                    <p class="home__description">Hòa mình cũng với thiên nhiên
+                                    </p>
+
+                                    <div class="home__buttons">
+                                        <a href="datPhong.html" class="button"><span>Đặt ngay</span></a>
+                                        <a href="danhsachphong.html" class="button--link button--flex">Xem toàn bộ <i class='bx bx-right-arrow-alt button__icon'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- HOME SLIDER 3 -->
+                        <section class="swiper-slide">
+                            <div class="home__content grid">
+                                <div class="home__group">
+                                    <img src="../assets/img/home/slider/title3.jpg" alt="" class="home__img">
+                                    <div class="home__indicator"></div>
+
+                                    <div class="home__details-img">
+                                        <h4 class="home__details-title">Mood Asia</h4>
+                                        <span class="home__details-subtitle">Chúc bạn một ngày vui vẻ.</span>
+                                    </div>
+                                </div>
+
+                                <div class="home__data">
+                                    <h3 class="home__subtitle">#3 ĐẦY ĐỦ TIỆN NGHI</h3>
+                                    <h1 class="home__title">WIFI <br> NHÀ HÀNG  <br> PHỤC VỤ 24/24!!</h1>
+                                    <p class="home__description">Rất hân hạng được phục vụ
+                                    </p>
+
+                                    <div class="home__buttons">
+                                        <a href="datPhong.html" class="button"><span>Đặt ngay</span></a>
+                                        <a href="danhsachphong.html" class="button--link button--flex">Xem toàn bộ <i class='bx bx-right-arrow-alt button__icon'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                    </div>
+            </section>
+
+            <!--==================== PARTNER ====================-->
+            <section class="section discount" id="money">
+                <div class="discount__container container grid">
+                    <div class="discount__data">
+                        <h2 class="discount__title">CƠ HỘI <br> TĂNG THÊM THU NHẬP <br> TRÊN "TÊN WEB".</h2>
+                        <a href="kenhdoitac.html" class="button js-partner"><span>Trải nghiệm ngay</span></a>
+                    </div>
+
+
+                    <img src="../assets/img/home/money.png" alt="" class="discount__img">
+                </div>
+            </section>
+
+            <!--==================== LOCATION ====================-->
+            <section class="section location" id="location">
+                <h2 class="section__title">Những nơi thú vị gần bạn </h2>
+
+                <div class="location__container container grid">
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-tpHoChiMinh.jpg" alt="" class="location__img">
+                        <h3 class="location__title">TP. Hồ Chí Minh</h3>
+                        <span class="location__subtitle">2704 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-HaNoi.jpg" alt="" class="location__img">
+                        <h3 class="location__title">Hà Nội</h3>
+                        <span class="location__subtitle">3124 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-DaLat.jpg" alt="" class="location__img">
+                        <h3 class="location__title">Đà Lạt</h3>
+                        <span class="location__subtitle">968 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-PhanRang.jpg" alt="" class="location__img">
+                        <h3 class="location__title">TP. Phan Rang</h3>
+                        <span class="location__subtitle">498 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-HoiAn.jpg" alt="" class="location__img">
+                        <h3 class="location__title">Hội An</h3>
+                        <span class="location__subtitle">678 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+
+                    <div class="location__content">
+                        <img src="../assets/img/img-city/img-QuyNhon.jpg" alt="" class="location__img">
+                        <h3 class="location__title">Quy Nhơn</h3>
+                        <span class="location__subtitle">561 khách sạn</span>
+                        <button class="button location__button">
+                            <i class='bx bx-right-arrow-alt location__icon'></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!--==================== NEW ARRIVALS ====================-->
+            <section class="section new" id="new">
+                <h2 class="section__title">Giá khuyến mãi mừng dịp khai trương</h2>
+
+                <div class="new__container container">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel1.jpg" alt="" class="new__img">
+                                <h3 class="new__title">Khách sạn New World SaiGon</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$14.99</span>
+                                    <span class="new__discount">$29.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel2.jpg" alt="" class="new__img">
+                                <h3 class="new__title">Khách sạn Rex SaiGon</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$11.99</span>
+                                    <span class="new__discount">$21.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel17.jpg" alt="" class="new__img">
+                                <h3 class="new__title">Khách sạn Golden Crown</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$4.99</span>
+                                    <span class="new__discount">$9.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel16.jpg" alt="" class="new__img">
+                                <h3 class="new__title">Laluna Saigon Hotel</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$24.99</span>
+                                    <span class="new__discount">$44.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel73.jpg" alt="" class="new__img">
+                                <h3 class="new__title">Khách sạn Queen Ann Hồ Chí Minh</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$5.99</span>
+                                    <span class="new__discount">$12.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+
+                            <div class="new__content swiper-slide">
+                                <div class="new__tag">New</div>
+                                <img src="../assets/img/hotel/hotel27.jpg" alt="" class="new__img">
+                                <h3 class="new__title">RedDoorz Plus</h3>
+                                <span class="new__subtitle">24/24</span>
+
+                                <div class="new__prices">
+                                    <span class="new__price">$7.99</span>
+                                    <span class="new__discount">$14.99</span>
+                                </div>
+
+                                <button class="button new__button">
+                                    <a href="datPhong.html" target="_blank"><i class='bx bx-cart-alt new__icon'></i></a>
+                                </button>
+                            </div>
+                        </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+            <!--==================== ABOUT ====================-->
+            <section class="section about" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">Có 2 phòng <br>đang chờ nhận <i class="bx bxs-cart"></i></h2>
+                        <p class="about__description">Có 7 căn bạn chưa đánh giá, hãy đánh giá để nhận điểm nào
+                        </p>
+                        <a href="danhGia&Xem.html" class="button"><span>Xem và đánh giá</span></a>
+                    </div>
+
+                    <img src="../assets/img/home/about.png" alt="" class="about__img">
+                </div>
+            </section>
+
+            <!--==================== OUR NEWSLETTER ====================-->
+            <section class="section newsletter">
+                <div class="newsletter__container container">
+                    <h2 class="section__title">Thông báo thông minh</h2>
+                    <p class="newsletter__description">
+                    Đăng kí để nhận được thông tin bổ ích cũng như các khuyến mãi mà chúng tối muốn gửi đến bạn.
+                    </p>
+
+                    <form action="" class="newsletter__form">
+                        <input type="email" placeholder="Nhập địa chỉ email" class="newsletter__input">
+                        <button class="button">
+                            <span>Đăng kí</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+            <footer class="footer section">
+                <div class="footer__container container grid">
+                    <div class="footer__content">
+                        <a href="#" class="footer__logo">
+                            <img src="../assets/img/home/hinh.PNG" alt="" class="footer__logo-img">
+                            LogoNhom
+                        </a>
+
+                        <p class="footer__description">Hãy enjoy cái <br> moment này.</p>
+
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-instagram-alt' ></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-twitter' ></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">About</h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Features</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">News</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">Our Services</h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Discounts</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Shipping mode</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">Our Company</h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">About us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Our mision</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <span class="footer__copy">&#169; tên nhóm. All rigths reserved(xaoloz)</span>
+
+            </footer>
+
+            <!--=============== SCROLL UP ===============-->
+            <a href="#" class="scrollup" id="scroll-up">
+                <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+            </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+        <!--========== GSAP ==========-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="../assets/js/main.js"></script>
+    </body>
+</html>
