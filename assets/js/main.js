@@ -1,371 +1,332 @@
-////////////////////////////////////////////////////////////////////////////
-//                                  _ooOoo_                               //
-//                                 o8888888o                              //
-//                                 88" . "88                              //
-//                                 (| ^_^ |)                              //
-//                                 O\  =  /O                              //
-//                              ____/`---'\____                           //
-//                            .'  \\|     |//  `.                         //
-//                           /  \\|||  :  |||//  \                        //
-//                          /  _||||| -:- |||||-  \                       //
-//                          |   | \\\  -  /// |   |                       //
-//                          | \_|  ''\---/''  |   |                       //
-//                          \  .-\__  `-`  ___/-. /                       //
-//                        ___`. .'  /--.--\  `. . ___                     //
-//                      ."" '< `.___\_<|>_/___.'  >'"".                   //
-//                    | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
-//                    \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
-//             ========`-.____`-.___\_____/___.-`____.-'========          //
-//                                  `=---='                               //
-//              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
-// Buddha's blessings will never be shut down and there will never be BUG //
-////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
-
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
-}
-
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
-
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*=============== HOME SWIPER ===============*/
-let homeSwiper = new Swiper(".home-swiper", {
-    spaceBetween: 30,
-    loop: 'true',
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-})
-
-/*=============== CHANGE BACKGROUND HEADER ===============*/
-function scrollHeader(){
-    const header = document.getElementById('header')
-    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
-
-
-}
-window.addEventListener('scroll', scrollHeader)
-
-
-/*=============== NEW SWIPER ===============*/
-let newSwiper = new Swiper(".new-swiper", {
-    centeredSlides: true,
-    slidesPerView: "auto",
-    loop: 'true',
-    spaceBetween: 16,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+ AOS.init({
+ 	duration: 800,
+ 	easing: 'slide',
+ 	once: false
  });
 
-/*=============== BUTTON SELECTED ===============*/
+jQuery(document).ready(function($) {
 
- const button = document.querySelectorAll('.button');
- button.forEach(button =>{
-    button.onmousemove = function(e){
-        const x = e.pageX - button.offsetLeft;
-        const y = e.pageY - button.offsetTop;
+	"use strict";
 
-        button.style.setProperty('--x',x+'px');
-        button.style.setProperty('--y',y+'px');
+	
+
+	var siteMenuClone = function() {
+
+		$('.js-clone-nav').each(function() {
+			var $this = $(this);
+			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
+		});
+
+
+		setTimeout(function() {
+			
+			var counter = 0;
+      $('.site-mobile-menu .has-children').each(function(){
+        var $this = $(this);
+        
+        $this.prepend('<span class="arrow-collapse collapsed">');
+
+        $this.find('.arrow-collapse').attr({
+          'data-toggle' : 'collapse',
+          'data-target' : '#collapseItem' + counter,
+        });
+
+        $this.find('> ul').attr({
+          'class' : 'collapse',
+          'id' : 'collapseItem' + counter,
+        });
+
+        counter++;
+
+      });
+
+    }, 1000);
+
+		$('body').on('click', '.arrow-collapse', function(e) {
+      var $this = $(this);
+      if ( $this.closest('li').find('.collapse').hasClass('show') ) {
+        $this.removeClass('active');
+      } else {
+        $this.addClass('active');
       }
+      e.preventDefault();  
+      
+    });
+
+		$(window).resize(function() {
+			var $this = $(this),
+				w = $this.width();
+
+			if ( w > 768 ) {
+				if ( $('body').hasClass('offcanvas-menu') ) {
+					$('body').removeClass('offcanvas-menu');
+				}
+			}
+		})
+
+		$('body').on('click', '.js-menu-toggle', function(e) {
+			var $this = $(this);
+			e.preventDefault();
+
+			if ( $('body').hasClass('offcanvas-menu') ) {
+				$('body').removeClass('offcanvas-menu');
+				$this.removeClass('active');
+			} else {
+				$('body').addClass('offcanvas-menu');
+				$this.addClass('active');
+			}
+		}) 
+
+		// click outisde offcanvas
+		$(document).mouseup(function(e) {
+	    var container = $(".site-mobile-menu");
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+	      if ( $('body').hasClass('offcanvas-menu') ) {
+					$('body').removeClass('offcanvas-menu');
+				}
+	    }
+		});
+	}; 
+	siteMenuClone();
+
+
+	var sitePlusMinus = function() {
+		$('.js-btn-minus').on('click', function(e){
+			e.preventDefault();
+			if ( $(this).closest('.input-group').find('.form-control').val() != 0  ) {
+				$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) - 1);
+			} else {
+				$(this).closest('.input-group').find('.form-control').val(parseInt(0));
+			}
+		});
+		$('.js-btn-plus').on('click', function(e){
+			e.preventDefault();
+			$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) + 1);
+		});
+	};
+	// sitePlusMinus();
+
+
+	var siteSliderRange = function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	};
+	// siteSliderRange();
+
+
+	var siteMagnificPopup = function() {
+		$('.image-popup').magnificPopup({
+	    type: 'image',
+	    closeOnContentClick: true,
+	    closeBtnInside: false,
+	    fixedContentPos: true,
+	    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+	     gallery: {
+	      enabled: true,
+	      navigateByImgClick: true,
+	      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+	    },
+	    image: {
+	      verticalFit: true
+	    },
+	    zoom: {
+	      enabled: true,
+	      duration: 300 // don't foget to change the duration also in CSS
+	    }
+	  });
+
+	  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+	    disableOn: 700,
+	    type: 'iframe',
+	    mainClass: 'mfp-fade',
+	    removalDelay: 160,
+	    preloader: false,
+
+	    fixedContentPos: false
+	  });
+	};
+	siteMagnificPopup();
+
+
+	var siteCarousel = function () {
+		if ( $('.nonloop-block-13').length > 0 ) {
+			$('.nonloop-block-13').owlCarousel({
+		    center: false,
+		    items: 1,
+		    loop: true,
+				stagePadding: 0,
+				autoplay: true,
+		    margin: 20,
+		    nav: true,
+		    dots: true,
+				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+		    responsive:{
+	        600:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 1
+	        },
+	        1000:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 2
+	        },
+	        1200:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 3
+	        }
+		    }
+			});
+		}
+
+
+
+		if ( $('.nonloop-block-14').length > 0 ) {
+			$('.nonloop-block-14').owlCarousel({
+		    center: false,
+		    items: 1,
+		    loop: true,
+				stagePadding: 0,
+				autoplay: true,
+		    margin: 20,
+		    nav: true,
+		    dots: true,
+				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+		    responsive:{
+	        600:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 1
+	        },
+	        1000:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 2
+	        }
+	        
+		    }
+			});
+		}
+
+		if ( $('.nonloop-block-15').length > 0 ) {
+			$('.nonloop-block-15').owlCarousel({
+		    center: false,
+		    items: 1,
+		    loop: true,
+				stagePadding: 0,
+				autoplay: true,
+		    margin: 20,
+		    nav: true,
+		    dots: true,
+				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+		    responsive:{
+	        600:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 1,
+	          nav: false,
+		    		dots: true
+	        },
+	        1000:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 2,
+	          nav: true,
+		    		dots: true
+	        },
+	        1200:{
+	        	margin: 20,
+	        	stagePadding: 0,
+	          items: 3,
+	          nav: true,
+		    		dots: true
+	        }
+		    }
+			});
+		}
+
+		if ( $('.slide-one-item').length > 0 ) {
+			$('.slide-one-item').owlCarousel({
+		    center: false,
+		    items: 1,
+		    loop: true,
+				stagePadding: 0,
+		    margin: 0,
+		    autoplay: true,
+		    pauseOnHover: false,
+		    animateOut: 'fadeOut',
+    		animateIn: 'fadeIn',
+		    nav: true,
+		    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">']
+		  });
+	  }
+	};
+	siteCarousel();
+
+	var siteStellar = function() {
+		$(window).stellar({
+	    responsive: false,
+	    parallaxBackgrounds: true,
+	    parallaxElements: true,
+	    horizontalScrolling: false,
+	    hideDistantElements: false,
+	    scrollProperty: 'scroll'
+	  });
+	};
+	siteStellar();
+
+	var siteCountDown = function() {
+
+		if ( $('#date-countdown').length > 0 ) {
+			$('#date-countdown').countdown('2020/10/10', function(event) {
+			  var $this = $(this).html(event.strftime(''
+			    + '<span class="countdown-block"><span class="label">%w</span> weeks </span>'
+			    + '<span class="countdown-block"><span class="label">%d</span> days </span>'
+			    + '<span class="countdown-block"><span class="label">%H</span> hr </span>'
+			    + '<span class="countdown-block"><span class="label">%M</span> min </span>'
+			    + '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
+			});
+		}
+				
+	};
+	siteCountDown();
+
+	var siteDatePicker = function() {
+
+		if ( $('.datepicker').length > 0 ) {
+			$('.datepicker').datepicker();
+		}
+
+	};
+	siteDatePicker();
+
+
+	var windowScrolled = function() {
+
+
+		$(window).scroll(function() {
+
+			var $w = $(this), st = $w.scrollTop(), navbar = $('.js-site-navbar') ;
+
+			if ( st > 100 ) {
+				navbar.addClass('scrolled');
+			} else {
+				navbar.removeClass('scrolled');
+			}
+			
+		})
+
+	}
+	windowScrolled();
+
 });
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive(){
-    const scrollY = window.pageYOffset
-
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*=============== SHOW SCROLL UP ===============*/
-function scrollUp(){
-    const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if(this.scrollY >= 460) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
-
-/*=============== SCROLL EREVAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-    // reset: true
-})
-
-sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
-sr.reveal(`.category__data, .location__content, .footer__content`,{interval: 100})
-sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
-sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
-
-
-
-
-
-
-
-
-
-
-
-
-/*==================== SHOW MENU ====================*/
-// const showMenu = (toggleId, navId) =>{
-//     const toggle = document.getElementById(toggleId),
-//     nav = document.getElementById(navId)
-
-//     // Validate that variables exist
-//     if(toggle && nav){
-//         toggle.addEventListener('click', () =>{
-//             // We add the show-menu class to the div tag with the nav__menu class
-//             nav.classList.toggle('show-menu')
-//         })
-//     }
-// }
-
-// showMenu('nav-toggle','nav-menu')
-
-/*==================== SWIPER JS ====================*/
-let galleryThumbs = new Swiper('.gallery-thumbs', {
-    spaceBetween: 0,
-    slidesPerView: 0,
-})
-
-let galleryTop = new Swiper('.gallery-top', {
-    effect: 'fade',
-    loop: true,
-
-    thumbs: {
-      swiper: galleryThumbs
-    }
-})
-
-
-/*==================== POPUP ====================*/
-const btnOpenVideo = document.querySelectorAll('.banner__video-content')
-const bannerPopup = document.getElementById('popup')
-
-function poPup(){
-    bannerPopup.classList.add('show-popup')
-}
-btnOpenVideo.forEach(b => b.addEventListener('click', poPup))
-
-const btnCloseVideo = document.getElementById('popup-close')
-
-btnCloseVideo.addEventListener('click', ()=> {
-    bannerPopup.classList.remove('show-popup')
-})
-
-/*==================== GSAP ANIMATION ====================*/
-const controlImg = document.querySelectorAll('.controls__img')
-
-function scrollAnimation(){
-    gsap.from('.banner__subtitle', {opacity: 0, duration: .2, delay: .2, y: -20})
-    gsap.from('.banner__title', {opacity: 0, duration: .3, delay: .3, y: -20})
-    gsap.from('.banner__description', {opacity: 0, duration: .4, delay: .4, y: -20})
-    gsap.from('.banner__button', {opacity: 0, duration: .5, delay: .5, y: -20})
-    gsap.from('.banner__video-content', {opacity: 0, duration: .6, delay: .6, y: -20})
-
-    bannerPopup.classList.remove('show-popup')
-}
-
-controlImg.forEach(c => c.addEventListener('click', scrollAnimation))
-/*==================== LOGIN ====================*/
-const butLoginUser = document.querySelector('.js-button-login')
-const modalLogin = document.querySelector('.modal-login')
-const modalClone = document.querySelector('.modal-clone')
-function showTableLogin(){
-    modalLogin.classList.add('open')
-    modalRegister.classList.remove('open')
-    modalReturn.classList.remove('open')
-    modalUser.classList.remove('open')
-}
-function  cloneTableLogin(){
-    modalLogin.classList.remove('open')
-}
-butLoginUser.addEventListener('click',showTableLogin)
-modalClone.addEventListener('click',cloneTableLogin)
-/*==================== REGISTER ====================*/
-const newRegister = document.querySelector('.js-register-in-login')
-const modalRegister = document.querySelector('.js-register')
-const  modalCloneRegister = document.querySelector('.js-clone-register')
-function showTableRegister(){
-    modalLogin.classList.remove('open')
-    modalRegister.classList.add('open')
-    modalReturn.classList.remove('open')
-    modalUser.classList.remove('open')
-}
-function cloneTableRegister(){
-    modalRegister.classList.remove('open')
-
-}
-
-newRegister.addEventListener('click',showTableRegister)
-modalCloneRegister.addEventListener('click',cloneTableRegister)
-
-/*==================== USER ====================*/
-const butUser = document.querySelector('.js-button-user')
-const modalUser = document.querySelector('.js-user')
-const modalCloneUser = document.querySelector('.js-clone-user')
-function showTableUser(){
-    modalUser.classList.add('open')
-    modalRegister.classList.remove('open')
-    modalReturn.classList.remove('open')
-    modalLogin.classList.remove('open')
-}
-function  cloneTableUser(){
-    modalUser.classList.remove('open')
-}
-butUser.addEventListener('click',showTableUser)
-modalCloneUser.addEventListener('click',cloneTableUser)
-/*==================== SEARCH ====================*/
-const butSearchHome = document.querySelectorAll('.js-input-search-home')
-/*==================== LIST-HOUSE ====================*/
-const listHouses = document.querySelectorAll('.location__content')
-function showListHouse(){
-    window.location.href="danhsachphong.html";
-}
-for ( const house of listHouses){
-    house.addEventListener('click',showListHouse)
-}
-for (const nvh of butSearchHome){
-    nvh.addEventListener('click',showListHouse)
-}
-/*==================== CART ====================*/
-const newCart = document.querySelector('.js-button-return')
-const modalReturn = document.querySelector('.modal-return-hotel')
-const modalCloneReturn = document.querySelector('.js-clone-return')
-function showTabelCart(){
-    // alert('hieu')
-    modalReturn.classList.add('open')
-    modalRegister.classList.remove('open')
-    modalLogin.classList.remove('open')
-    modalUser.classList.remove('open')
-}
-newCart.addEventListener('click',showTabelCart)
-function cloneReturn(){
-    modalReturn.classList.remove('open')
-}
-modalCloneReturn.addEventListener('click',cloneReturn)
-/*==================== EVALUATE ====================*/
-const newEvas = document.querySelectorAll('.button--evaluate')
-const modelEvaluate = document.querySelector('.model-evaluate')
-const  cloneEvaluate = document.querySelector('.js-clone-evaluate')
-function showEvaluate(){
-    modelEvaluate.classList.add('open')
-}
-function cloneTableEvaluate(){
-    modelEvaluate.classList.remove('open')
-}
-for (const newEva of newEvas){
-    newEva.addEventListener('click',showEvaluate)
-}
-cloneEvaluate.addEventListener('click',cloneTableEvaluate)
-/*==================== MAKE-STAR ====================*/
-const star1 = document.querySelector('.one-star')
-const star2 = document.querySelector('.two-star')
-const star3 = document.querySelector('.three-star')
-const star4 = document.querySelector('.four-star')
-const star5 = document.querySelector('.five-star')
-function makeStar1(){
-    star1.classList.add('bxs-star')
-    star1.classList.remove('bx-star')
-    star2.classList.add('bx-star')
-    star2.classList.remove('bxs-star')
-    star3.classList.add('bx-star')
-    star3.classList.remove('bxs-star')
-    star4.classList.add('bx-star')
-    star4.classList.remove('bxs-star')
-    star5.classList.add('bx-star')
-    star5.classList.remove('bxs-star')
-}
-function makeStar2(){
-    makeStar1()
-    star2.classList.add('bxs-star')
-    star2.classList.remove('bx-star')
-    star3.classList.add('bx-star')
-    star3.classList.remove('bxs-star')
-    star4.classList.add('bx-star')
-    star4.classList.remove('bxs-star')
-    star5.classList.add('bx-star')
-    star5.classList.remove('bxs-star')
-}
-function makeStar3(){
-    makeStar2()
-    star3.classList.add('bxs-star')
-    star3.classList.remove('bx-star')
-    star4.classList.add('bx-star')
-    star4.classList.remove('bxs-star')
-    star5.classList.add('bx-star')
-    star5.classList.remove('bxs-star')
-}
-function makeStar4(){
-    makeStar3()
-    star4.classList.add('bxs-star')
-    star4.classList.remove('bx-star')
-    star5.classList.add('bx-star')
-    star5.classList.remove('bxs-star')
-}
-function makeStar5(){
-    makeStar4()
-    star5.classList.add('bxs-star')
-    star5.classList.remove('bx-star')
-}
-star1.addEventListener('click',makeStar1)
-star2.addEventListener('click',makeStar2)
-star3.addEventListener('click',makeStar3)
-star4.addEventListener('click',makeStar4)
-star5.addEventListener('click',makeStar5)
