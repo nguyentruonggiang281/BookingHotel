@@ -2,7 +2,7 @@
 miêu tả     
 I.Các chức năng chính.  
  1.Đăng nhập.   
- 2.Đăng kí.         
+ 2.Đăng kí. 
  3.User     
 a)Thông tin cơ bản: số điện thoại, ảnh,..          
 b)Liên kết ngân hàng.   
